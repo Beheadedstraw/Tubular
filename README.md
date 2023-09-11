@@ -9,6 +9,7 @@ Ways of collecting are:
 - Searching by Channel
 - Searching from a Playlist
 - Bulk collecting via playlist.
+- Tracks Downloaded Items via sqlite DB. 
 
 ## How This Does It
 Currently thanks to scrapetube and youtube_dl libraries with my own added special sauce. This serves everything through a lightweight FastAPI instance and keeps track of collecting by storing the queue and completed downloads in an sqlite database.
