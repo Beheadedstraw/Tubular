@@ -19,7 +19,7 @@ from db import DB
 ############ Change These ####################
 
 #change this to set the download location for videos
-download_location = "/home/{username}"      
+download_location = "/home/darendt/Videos"      
 
 
 ##############################################
@@ -93,7 +93,7 @@ async def download(query: str =""):
             else:
                 disabled = ""
                 button = "Download"
-                content += f'<tr><td><img src="{v["thumbnail"]}"></td><td>{v["title"]}</td><td>{v["upload_date"]}</td><td><a href="{v["url"]}">{v["url"]}</a></td><td><input type="button" onclick=queueDownload("{v["url"]}",this) value="{button}" {disabled}><input type="button" onclick=queueDownload("{v["url"]}",this) value="Force Download"></td></tr>'
+            content += f'<tr><td><img src="{v["thumbnail"]}"></td><td>{v["title"]}</td><td>{v["upload_date"]}</td><td><a href="{v["url"]}">{v["url"]}</a></td><td><input type="button" onclick=queueDownload("{v["url"]}",this) value="{button}" {disabled}><input type="button" onclick=queueDownload("{v["url"]}",this) value="Force Download"></td></tr>'
     else:
         content = ""
     
@@ -106,7 +106,6 @@ async def playlist(query: str =""):
         try:
             videos = get_all_video_in_playlist(query)
         except Exception as e:
-            print(e)
             content = f"<p>{e}/p>"
             page = head + playlist_search_bar(query) + content + footer
             return HTMLResponse(page)
@@ -121,7 +120,7 @@ async def playlist(query: str =""):
             else:
                 disabled = ""
                 button = "Download"
-                content += f'<tr><td><img src="{v["thumbnail"]}"></td><td>{v["title"]}</td><td>{v["upload_date"]}</td><td><a href="{v["url"]}">{v["url"]}</a></td><td><input type="button" onclick=queueDownload("{v["url"]}",this) value="{button}" {disabled}><input type="button" onclick=queueDownload("{v["url"]}",this) value="Force Download"></td></tr>'
+            content += f'<tr><td><img src="{v["thumbnail"]}"></td><td>{v["title"]}</td><td>{v["upload_date"]}</td><td><a href="{v["url"]}">{v["url"]}</a></td><td><input type="button" onclick=queueDownload("{v["url"]}",this) value="{button}" {disabled}><input type="button" onclick=queueDownload("{v["url"]}",this) value="Force Download"></td></tr>'
     else:
         content = ""
     
@@ -172,7 +171,6 @@ def get_all_video_in_search(query):
     videos = scrapetube.get_search(query, sleep=0.1, limit=100, sort_by="upload_date")
     v_list = []
     for video in videos:
-        print(video)
         video_url = "https://www.youtube.com/watch?v="+str(video['videoId'])
         print(video_url)
         v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": video['publishedTimeText']['simpleText']})
