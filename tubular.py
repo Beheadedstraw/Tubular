@@ -198,23 +198,26 @@ def get_video_title(video_url):
 def downloader_thread():
     dbt = DB()
     while True:
-        global DL_PAUSED
-        if DL_PAUSED != "Paused":
-            video = dbt.queue_pull()
-            if video:
-                ydl_opts = {
-                    'outtmpl': download_location + '/%(uploader)s/%(title)s.%(ext)s',
-                    'ignoreerrors': True
-                    }
-                
-                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                    try:
-                        d = ydl.download([video])
-                        dbt.queue_delete(video)
-                        dbt.dl_complete(video)
-                    except Exception as e:
-                        pass
-            time.sleep(2)
+        try:
+            global DL_PAUSED
+            if DL_PAUSED != "Paused":
+                video = dbt.queue_pull()
+                if video:
+                    ydl_opts = {
+                        'outtmpl': download_location + '/%(uploader)s/%(title)s.%(ext)s',
+                        'ignoreerrors': True
+                        }
+                    
+                    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                        try:
+                            d = ydl.download([video])
+                            dbt.queue_delete(video)
+                            dbt.dl_complete(video)
+                        except Exception as e:
+                            pass
+        except Exception as e:
+            print(e)
+        time.sleep(2)
             
 
 downloader = Thread(target=(downloader_thread), args=())
