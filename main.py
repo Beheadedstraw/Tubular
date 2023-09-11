@@ -52,7 +52,7 @@ async def pause():
 async def download(video: str):
     download_queue.append(video)
     db.queue_insert(video)
-    return {"message":"Success"}
+    return RedirectResponse("/video")
 
 @app.get("/clear_queue")
 async def clear_queue():

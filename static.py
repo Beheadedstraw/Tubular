@@ -89,6 +89,7 @@ def playlist_search_bar(query):
     return f"""
     <form method="GET" action="./playlist">
     <h3>This shows all videos in a playlist that you can download. Keep in mind this <b>will</b> take a long time if the playlist is huge.</h3>
+    <h3>Please use ONLY the playlist id, typically you can find this in the url, it will look something like "PLPe5oHlbIf0xKiQCF9dMjykZeS38tmbXc"
     <br>
     <input name="query" type="text" size="100" value="{query}"/>
     <br>
