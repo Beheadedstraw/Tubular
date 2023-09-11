@@ -1,0 +1,8 @@
+fastapi
+scrapetube
+requests
+bs4
+uvicorn
+youtube_dl
+fastapi
+starlette
