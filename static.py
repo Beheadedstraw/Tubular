@@ -24,7 +24,7 @@ footer = """
 </table>
 <script>
 const queueDownload = async (download, ele) => {
-        const response = await fetch('http://127.0.0.1:8000/download?video=' + download,
+        const response = await fetch('download?video=' + download,
             {headers: {
             'Access-Control-Allow-Origin':'*',
             }});
@@ -75,7 +75,7 @@ def video_download_queue(paused):
     
 def video_search_bar(query):
     return f"""
-    <form method="GET" action="./search">
+    <form method="GET" action="/search">
     <h3>This is a standard Youtube search that will return the first 100 videos of your query. If you can't find the video you want, try being a little more descriptive.</h3>
     <br>
     <input name="query" type="text" size="100" value="{query}"/>
@@ -87,7 +87,7 @@ def video_search_bar(query):
     
 def playlist_search_bar(query):
     return f"""
-    <form method="GET" action="./playlist">
+    <form method="GET" action="/playlist">
     <h3>This shows all videos in a playlist that you can download. Keep in mind this <b>will</b> take a long time if the playlist is huge.</h3>
     <h3>Please use ONLY the playlist id, typically you can find this in the url, it will look something like "PLPe5oHlbIf0xKiQCF9dMjykZeS38tmbXc"
     <br>
