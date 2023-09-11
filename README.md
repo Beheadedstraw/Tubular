@@ -15,8 +15,9 @@ Currently thanks to scrapetube and youtube_dl libraries with my own added specia
 ## How To Run It
 1. clone this repo
 2. `pip install -r requirements.txt`
-3. `python /main.py`
-4. Navigate to `http://{your ip}:8000`
+3. Change the variable `download_location` in the tubular.py to the location you want to collect your files.
+4. Run `python /tubular.py`
+5. Navigate to `http://{your ip}:8000`
 
 ## FAQ
 ### What version of python does this run on?
