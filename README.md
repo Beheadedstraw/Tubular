@@ -1,4 +1,4 @@
-# TUBULAR - A YouTube Video uh... *"Collecting"* Suite
+# Tubular - A YouTube Video uh... *"Collecting"* Suite
 
 ## What This Does
 This helps with collecting YouTube videos for offline viewing in an easy'ish to use and not so fancy web UI.
