@@ -79,7 +79,7 @@ async def download(query: str =""):
         try:
             videos = get_all_video_in_search(query)
         except Exception as e:
-            content = "<p>something is norked</p>"
+            content = f"<p>something is borked: {e}</p>"
             page = head + video_search_bar(query) + content + footer
             return HTMLResponse(page)
         
@@ -106,7 +106,7 @@ async def playlist(query: str =""):
         try:
             videos = get_all_video_in_playlist(query)
         except Exception as e:
-            content = f"<p>{e}/p>"
+            content = f"<p>something is borked: {e}</p>"
             page = head + playlist_search_bar(query) + content + footer
             return HTMLResponse(page)
         
@@ -132,7 +132,7 @@ async def channel(channel_id: str="", filter: str=""):
     try:
         videos = get_all_video_in_channel(channel_id)
     except Exception as e:
-        content = "<p>Channel doesn't exist</p>"
+        content = f"<p>something is borked: {e}</p>"
         page = head + channel_search_bar(channel_id, filter) + content + footer
         return HTMLResponse(page)
         
