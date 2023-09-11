@@ -19,7 +19,7 @@ from db import DB
 ############ Change These ####################
 
 #change this to set the download location for videos
-download_location = "/home/darendt/Videos"      
+download_location = "/videos"      
 
 
 ##############################################
