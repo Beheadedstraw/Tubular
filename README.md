@@ -31,7 +31,7 @@ Currently thanks to scrapetube and youtube_dl libraries with my own added specia
 ### Why Not Make Something Like *arr programs?
 - Because I hate C#.
 
-### Will this ever get as feasture rich as the *arr programs?
+### Will this ever get as feature rich as the *arr programs?
 - Probably not. This was made in a couple of nights on a few beers and a prayer. If someone wants to help with PR's, it's more than welcome.
 
 ### Why does your Python code look like sh*t?
