@@ -16,6 +16,7 @@ Currently thanks to scrapetube and youtube_dl libraries with my own added specia
 1. clone this repo
 2. `pip install -r requirements.txt`
 3. `python /main.py`
+4. Navigate to `http://{your ip}:8000`
 
 ## FAQ
 ### What version of python does this run on?

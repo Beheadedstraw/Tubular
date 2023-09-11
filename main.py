@@ -34,7 +34,7 @@ DL_PAUSED = "Downloading"
 
 @app.get("/")
 async def root():
-    return {"message" : "It Works!."}
+    return RedirectResponse("/search")
 
 @app.get("/pause")
 async def pause():
