@@ -16,11 +16,34 @@ Ways of collecting are:
 Currently thanks to scrapetube and youtube_dl libraries with my own added special sauce. This serves everything through a lightweight FastAPI instance and keeps track of collecting by storing the queue and completed downloads in an sqlite database.
 
 ## How To Run It
+### No Container
 1. clone this repo
 2. `pip install -r requirements.txt`
 3. Change the variable `download_location` in the tubular.py to the location you want to collect your files.
 4. Run `python tubular.py`
 5. Navigate to `http://{your ip}:8000`
+
+## Docker
+> :warning: Change the source mount to wherever you want to store your files.
+
+`sudo docker run -p 8000:8000 --mount type=bind,source="/Videos",target=/videos ghcr.io/beheadedstraw/tubular:main`
+
+
+### Docker Compose
+```yaml
+version: '3'
+services:
+  app:
+    image: ghcr.io/beheadedstraw/tubular:main
+    container_name: tubular
+    restart: always
+    ports:
+      - 8000:8000
+    working_dir: /data
+    volumes:
+      - ./:/data         #data folder for app src
+      - /Videos:/videos  #folder to store videos ***PLEASE CHANGE THIS***
+```
 
 ## FAQ
 ### What version of python does this run on?
