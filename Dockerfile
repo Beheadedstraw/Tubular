@@ -9,7 +9,7 @@ ARG HOST=0.0.0.0
 VOLUME [ "$CONFIG_DIR" ]
 VOLUME [ "$DOWNLOAD_DIR" ]
 
-WORKDIR $CONFIG_DIR
+WORKDIR /src
 
 # Copy your application code
 COPY . .
