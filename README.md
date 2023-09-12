@@ -42,7 +42,7 @@ services:
     working_dir: /data
     volumes:
       - ./:/data         #data folder for app src
-      - /Videos:/videos  #folder to store videos ***PLEASE CHANGE THIS***
+      - /Videos:/videos  #folder to store videos ***CHANGE THIS TO WHERE YOU WANT TO STORE VIDS***
 ```
 
 ## FAQ
