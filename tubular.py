@@ -21,7 +21,6 @@ from db import DB
 #change this to set the download location for videos
 download_location = "/videos"      
 
-
 ##############################################
 
 app = FastAPI()
