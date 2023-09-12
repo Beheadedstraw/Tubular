@@ -12,5 +12,5 @@ services:
       - CONFIG_DIR=/data
       - DOWNLOAD_DIR=/videos
     volumes:
-      - /tublular/config:/data
-      - /tublular/videos:/videos
+      - /tubular/config:/data
+      - /tubular/videos:/videos

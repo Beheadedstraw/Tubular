@@ -45,8 +45,8 @@ services:
       - CONFIG_DIR=/data     # internal config path
       - DOWNLOAD_DIR=/videos # internal download path
     volumes:
-      - /tublular/config:/data   #data folder for app src
-      - /tublular/videos:/videos #folder to store videos ***CHANGE THIS TO WHERE YOU WANT TO STORE VIDS***
+      - /tubular/config:/data   #data folder for app src
+      - /tubular/videos:/videos #folder to store videos ***CHANGE THIS TO WHERE YOU WANT TO STORE VIDS***
 ```
 
 ## FAQ
