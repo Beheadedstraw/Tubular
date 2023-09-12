@@ -6,7 +6,11 @@ services:
     restart: always
     ports:
       - 8000:8000
-    working_dir: /data
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - CONFIG_DIR=/data
+      - DOWNLOAD_DIR=/videos
     volumes:
-      - ./:/data         #data folder for app src
-      - /Videos:/videos  #folder to store videos ***PLEASE CHANGE THIS***
+      - /tubular/config:/data
+      - /tubular/videos:/videos
