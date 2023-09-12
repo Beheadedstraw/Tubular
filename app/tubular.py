@@ -15,11 +15,12 @@ from threading import Thread
 import time
 from static import *
 from db import DB
+from config import PORT, HOST, DOWNLOAD_DIR
 
 ############ Change These ####################
 
 #change this to set the download location for videos
-download_location = "/videos"      
+download_location = DOWNLOAD_DIR      
 
 ##############################################
 
@@ -231,4 +232,4 @@ app.add_middleware(
 )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level=20)
+    uvicorn.run(app, host=HOST, port=PORT, log_level=20)

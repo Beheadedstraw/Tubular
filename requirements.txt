@@ -1,8 +1,8 @@
 fastapi
-scrapetube
-requests
-bs4
-uvicorn
-youtube_dl @ git+https://github.com/ytdl-org/youtube-dl@master
-fastapi
 starlette
+scrapetube==2.5.1
+requests==2.31.0
+bs4==0.0.1
+uvicorn==0.23.2
+youtube_dl==2021.12.17
+python-dotenv==1.0.0

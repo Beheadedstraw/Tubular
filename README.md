@@ -34,15 +34,19 @@ Currently thanks to scrapetube and youtube_dl libraries with my own added specia
 version: '3'
 services:
   app:
-    image: ghcr.io/beheadedstraw/tubular:main
+    image: ghcr.io/beheadedstraw/tubular:dev
     container_name: tubular
     restart: always
     ports:
       - 8000:8000
-    working_dir: /data
+    environment:
+      - HOST=0.0.0.0         # internal ip, leave as is.
+      - PORT=8000            # internal port
+      - CONFIG_DIR=/data     # internal config path
+      - DOWNLOAD_DIR=/videos # internal download path
     volumes:
-      - ./:/data         #data folder for app src
-      - /Videos:/videos  #folder to store videos ***CHANGE THIS TO WHERE YOU WANT TO STORE VIDS***
+      - /tublular/config:/data   #data folder for app src
+      - /tublular/videos:/videos #folder to store videos ***CHANGE THIS TO WHERE YOU WANT TO STORE VIDS***
 ```
 
 ## FAQ
