@@ -3,6 +3,6 @@ scrapetube
 requests
 bs4
 uvicorn
-youtube_dl
+youtube_dl @ git+https://github.com/ytdl-org/youtube-dl@master
 fastapi
 starlette

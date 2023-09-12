@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    image: ghcr.io/beheadedstraw/tubular:dev
+    container_name: tubular
+    restart: always
+    ports:
+      - 8000:8000
+    working_dir: /data
+    volumes:
+      - ./:/data         #data folder for app src
+      - /Videos:/videos  #folder to store videos ***PLEASE CHANGE THIS***

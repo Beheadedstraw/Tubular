@@ -19,8 +19,7 @@ from db import DB
 ############ Change These ####################
 
 #change this to set the download location for videos
-download_location = "/home/darendt/Videos"      
-
+download_location = "/videos"      
 
 ##############################################
 
@@ -164,7 +163,7 @@ def get_all_video_in_channel(channel_id):
     for video in videos:
         video_url = "https://www.youtube.com/watch?v="+str(video['videoId'])
         print(video_url)
-        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": video['publishedTimeText']['simpleText']})
+        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": "TBD"})
     return v_list
 
 def get_all_video_in_search(query):
@@ -173,7 +172,7 @@ def get_all_video_in_search(query):
     for video in videos:
         video_url = "https://www.youtube.com/watch?v="+str(video['videoId'])
         print(video_url)
-        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": video['publishedTimeText']['simpleText']})
+        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": "TBD"})
     return v_list
 
 def get_all_video_in_playlist(query):
@@ -182,7 +181,7 @@ def get_all_video_in_playlist(query):
     for video in videos:
         video_url = "https://www.youtube.com/watch?v="+str(video['videoId'])
         print(video_url)
-        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": video['videoInfo']['runs'][-1]['text']})
+        v_list.append({"title": video['title']['runs'][0]['text'], "url": video_url, "thumbnail": urllib.parse.unquote(video['thumbnail']['thumbnails'][0]['url']), "upload_date": "TBD"})
     return v_list
         
 
