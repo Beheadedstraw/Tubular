@@ -26,4 +26,4 @@ ENV HOST=$HOST
 EXPOSE $PORT
 
 # Start the application
-CMD ["python3", "./app/tubular.py"]
+CMD ["python3", "app/tubular.py"]
