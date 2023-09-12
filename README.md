@@ -23,12 +23,6 @@ Currently thanks to scrapetube and youtube_dl libraries with my own added specia
 4. Run `python tubular.py`
 5. Navigate to `http://{your ip}:8000`
 
-## Docker
-> :warning: Change the source mount to wherever you want to store your files.
-
-`sudo docker run -p 8000:8000 --mount type=bind,source="/Videos",target=/videos ghcr.io/beheadedstraw/tubular:main`
-
-
 ### Docker Compose
 ```yaml
 version: '3'
