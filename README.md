@@ -53,7 +53,7 @@ services:
 - you can change the `download_location` variable in the main.py
 
 ### Do You Have Any Docker Images?
-- Not yet, that's on the horizon
+- You can find them under the packages section to the right or read above.
 
 ### Why Not Make Something Like *arr programs?
 - Because I hate C#.
