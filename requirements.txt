@@ -1,8 +1,8 @@
 fastapi
 starlette
-scrapetube==2.5.1
+scrapetube @ git+https://github.com/Beheadedstraw/scrapetube@master
 requests==2.31.0
 bs4==0.0.1
 uvicorn==0.23.2
-youtube_dl==2021.12.17
+youtube_dl @ git+https://github.com/Beheadedstraw/youtube-dl@master
 python-dotenv==1.0.0
