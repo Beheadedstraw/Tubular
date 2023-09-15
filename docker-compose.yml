@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: ghcr.io/beheadedstraw/tubular:dev
+    image: ghcr.io/beheadedstraw/tubular:main
     container_name: tubular
     restart: always
     ports:
